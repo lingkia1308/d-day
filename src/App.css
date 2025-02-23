@@ -1,0 +1,15 @@
+/* Full-page container */
+.full-page-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #1A1A2E, #16213E);
+
+  position: relative;
+  overflow: hidden;
+}
+
