@@ -6,8 +6,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(135deg, #6a5acd, #483d8b);
+  background: linear-gradient(135deg, #1a1a2e, #16213e); /* Darker theme */
   width: 90vw;
+  box-shadow: inset 0px 0px 50px rgba(255, 255, 255, 0.1);
 }
 
 /* Headings */
@@ -16,17 +17,18 @@
   font-weight: bold;
   color: #f8f8f8;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+  text-shadow: 2px 2px 15px rgba(255, 255, 255, 0.5); /* Glow effect */
+  animation: fadeInDown 1s ease-in-out;
 }
 
 /* Paragraph */
 .sasha-concert p {
   font-size: 17px;
   color: #d1cfe2;
-  /* max-width: 600px; */
   line-height: 1.6;
   text-align: center;
   margin-bottom: 30px;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 /* Open Modal Button */
@@ -39,12 +41,13 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0px 4px 15px rgba(255, 105, 180, 0.4);
+  box-shadow: 0px 0px 20px rgba(255, 105, 180, 0.6); /* Glow effect */
 }
 
 .open-modal-button:hover {
   background: linear-gradient(135deg, #ff1493, #a00070);
   transform: scale(1.05);
+  box-shadow: 0px 0px 25px rgba(255, 105, 180, 0.9);
 }
 
 /* Full-screen Modal Overlay */
@@ -54,18 +57,19 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
   flex-direction: column;
+  animation: fadeIn ease 0.8s;
 }
 
 /* Photo Frame Modal */
 .modal-content {
   position: relative;
-  background: white;
+  background: #222;
   padding: 20px;
   border-radius: 12px;
   max-width: 80%;
@@ -75,9 +79,9 @@
   align-items: center;
 
   /* Photo Frame Effect */
-  border: 15px solid #f8f1e8; /* Soft beige frame */
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4), 
-              inset 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border: 10px solid #444; /* Darker frame */
+  box-shadow: 0px 10px 40px rgba(255, 255, 255, 0.2), 
+              inset 0px 0px 15px rgba(255, 255, 255, 0.1);
   transform: scale(1); /* Slight 3D effect */
 }
 
@@ -85,12 +89,12 @@
 .modal-content img,
 .modal-content video {
   max-width: 100%;
-  max-height: 70vh;
+  max-height: 80vh;
   border-radius: 6px;
-  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0px 0px 12px rgba(255, 255, 255, 0.2);
 }
 
-/* Close Button - Looks like a hanging hook */
+/* Close Button */
 .modal-close {
   position: absolute;
   top: -18px;
@@ -103,26 +107,16 @@
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 12px rgba(255, 0, 0, 0.6);
 }
 
 .modal-close:hover {
   background: #c70039;
   transform: scale(1.1);
+  box-shadow: 0px 0px 18px rgba(255, 0, 0, 0.9);
 }
 
-/* Add a hanging effect (Optional) */
-.modal-frame-hook {
-  position: absolute;
-  top: -25px;
-  width: 40px;
-  height: 8px;
-  background: #c0a080;
-  border-radius: 50%;
-  box-shadow: inset 0px -2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Position Arrows Below */
+/* Navigation Buttons with Glow */
 .carousel-navigation {
   display: flex;
   justify-content: center;
@@ -130,7 +124,7 @@
   margin-top: 15px;
 }
 
-/* Carousel Navigation Buttons */
+/* Navigation Buttons */
 .carousel-button {
   background: rgba(255, 255, 255, 0.2);
   color: white;
@@ -141,16 +135,13 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   backdrop-filter: blur(10px);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.5);
 }
 
-/* Hover and Active Effects */
 .carousel-button:hover {
   background: rgba(255, 255, 255, 0.4);
   transform: scale(1.1);
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
 }
 
 .carousel-button:active {
@@ -173,15 +164,35 @@
 }
 
 /* Fade-in Effect */
-.fade-in {
-  animation: fadeIn ease 1.5s;
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Pop-in Animation */
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Pulsing Glow */
+@keyframes pulseGlow {
+  from {
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5),
+                 0px 0px 20px rgba(255, 255, 255, 0.3);
+  }
+  to {
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8),
+                 0px 0px 30px rgba(255, 255, 255, 0.6);
   }
 }
