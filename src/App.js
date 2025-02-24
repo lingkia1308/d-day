@@ -4,10 +4,11 @@ import HowWeMet from "./Components/HowWeMet.js";
 import HowIRealised from "./Components/HowIRealised.js";
 import SashaSloanCarousel from "./Components/SashaSloanCarousel.js";
 import Lany3DGallery from "./Components/Lany3DGallery.js";
+import DaNang from "./Components/DaNang.js";
 
 export default function LoveStory() {
   const [currentStep, setCurrentStep] = useState(0);
-  const componentsLength = 4;
+  const componentsLength = 5;
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -50,6 +51,13 @@ export default function LoveStory() {
     />,
     <Lany3DGallery
       key="lany-carousel"
+      currentStep={currentStep}
+      nextStep={nextStep}
+      prevStep={prevStep}
+      compLen={componentsLength}
+    />,
+    <DaNang
+      key="danang"
       currentStep={currentStep}
       nextStep={nextStep}
       prevStep={prevStep}

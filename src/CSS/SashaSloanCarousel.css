@@ -7,6 +7,7 @@
   flex-direction: column;
   align-items: center;
   background: linear-gradient(135deg, #6a5acd, #483d8b);
+  width: 90vw;
 }
 
 /* Headings */
@@ -22,7 +23,7 @@
 .sasha-concert p {
   font-size: 17px;
   color: #d1cfe2;
-  max-width: 600px;
+  /* max-width: 600px; */
   line-height: 1.6;
   text-align: center;
   margin-bottom: 30px;

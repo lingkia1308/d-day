@@ -46,14 +46,7 @@
     align-items: center;
     justify-content: center;
   }
-  
-  .button-container {
-    margin-top: 20px; /* Add space above the button */
-    position: absolute;
-    bottom: 20px; /* Position it at the bottom */
-    left: 50%;
-    transform: translateX(-50%);
-  }
+
   
 
 /* Ensure the container fills the carousel */

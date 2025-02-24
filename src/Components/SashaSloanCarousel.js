@@ -47,14 +47,17 @@ const SashaSloanCarousel = ({ currentStep, nextStep, prevStep, compLen }) => {
     <section className="sasha-concert fade-in">
       <h1>Sasha Sloan Concert</h1>
       <p className="concert-memories">
-        I still remember how much you love the vibes of a concert. Our first
-        concert together was Sasha Sloan, and oh my god, we were listening to
-        her songs non-stop just to remember the lyrics! The energy, the music,
-        and experiencing it all with you made it so special. It was such a fun
-        night, and I realized how much I love going to concerts with you.
-        There's something magical about sharing those moments, singing our
-        hearts out, and just being lost in the music together. I can’t wait for
-        more concerts with you in the future.
+        I still remember how much you love the energy of live music—the way you
+        get lost in the moment, singing along and soaking up every note. Our
+        first concert together, Sasha Sloan, was such a special night. I can’t
+        help but smile thinking about how we played her songs on repeat for
+        weeks, trying to learn every word so we could sing along together. And
+        when we were there, surrounded by the music and the crowd, it felt like
+        it was just you and me in our own little world. Those moments with you
+        are the ones I hold onto, and I can’t wait for all the concerts we’ll go
+        to in the future—more nights of dancing, laughing, and just being
+        together. You make everything better, and I’m so grateful to share these
+        experiences with you.
       </p>
 
       <button className="open-modal-button" onClick={() => openModal(0)}>
