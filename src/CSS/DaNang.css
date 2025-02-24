@@ -1,64 +1,62 @@
 /* 🌊 General Styling */
 .da-nang-gallery {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
     width: 100vw;
     background: linear-gradient(to bottom, #87CEEB, #FFDAB9);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    font-family: Arial, sans-serif;
+    padding: 40px;
 }
 
-/* 🏝 Title Styling */
-.da-nang-gallery h1 {
+/* 📸 Slideshow - Left Side */
+.slideshow {
+    position: relative;
+    width: 45%; /* Slightly smaller */
+    max-width: 500px;
+    height: 600px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 🖼 Images */
+.slideshow img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* 👀 Only the active image is visible */
+.slideshow img.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* 📜 Right Side - Text Content */
+.text-content {
+    width: 50%;
+    padding-left: 40px;
+    text-align: left;
+}
+
+.text-content h1 {
     font-size: 36px;
     font-weight: bold;
     color: #ffffff;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-    /* margin-bottom: 20px; */
 }
 
-/* 📜 Description */
 .trip-description {
     font-size: 18px;
     color: #fefefe;
-    max-width: 80%;
-    /* line-height: 1.8; */
-    background: rgba(0, 0, 0, 0.3); /* Slightly darker for better readability */
+    background: rgba(0, 0, 0, 0.3);
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* 🎞 Slideshow Container */
-.slideshow {
-    position: relative;
-    width: 80%; /* Adjusted for MacBook Pro resolution */
-    max-width: 1000px; /* Wider images for better visibility */
-    margin: 30px auto;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* 🖼 Slideshow Images */
-.slideshow img {
-    width: 100%;
-    height: auto; /* Maintains aspect ratio */
-    display: block;
-    border-radius: 12px;
-    transition: opacity 1s ease-in-out;
-}
-
-/* 🚀 Fade Effect */
-.slideshow img.hidden {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
 }

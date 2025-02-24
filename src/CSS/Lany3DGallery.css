@@ -1,15 +1,48 @@
-/* Title Styling */
+/* === Main Container: Split the Page === */
+.lany-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh; /* Full screen height */
+  padding: 0 5%; /* Add spacing on sides */
+  gap: 5%;
+}
+
+/* === Left Section: Title & Paragraph === */
+.lany-info {
+  flex: 1; /* Takes up 50% */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #fff;
+  text-align: left;
+}
+
+/* Title */
 .gallery-title {
-  text-align: center;
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 32px;
+  font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #fff;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  position: absolute;
-  top: 20px;
-  width: 100%;
+}
+
+/* Paragraph */
+.gallery-description {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 500px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* === Right Section: Gallery === */
+.lany-concert {
+  flex: 1; /* Takes up 50% */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Carousel Container */
@@ -29,53 +62,37 @@
   transform-style: preserve-3d;
 }
 
-.lany-concert {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; /* Ensure it takes the full height */
-    position: relative;
-  }
-  
-  .carousel-container {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  
-
-/* Ensure the container fills the carousel */
+/* Ensure only the front-most carousel item is visible */
 .carousel-item {
-    width: 95%;
-    height: 100%;
-    position: absolute;
-    /* top: 35%; */
-    left: 0;
-    transform-origin: center;
-    backface-visibility: hidden;
-    transition: transform 0.8s ease-in-out;
+  width: 95%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  transform-origin: center;
+  backface-visibility: hidden;
+  transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out;
   
-    /* Fix centering issue */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Ensure images & videos are properly sized */
-  .carousel-item img,
-  .carousel-item video {
-    width: 80%;
-    height: 95%;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
-  }
-  
+  /* Initially hidden */
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Show only the front-most item */
+.carousel-item.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Ensure images & videos are properly sized */
+.carousel-item img,
+.carousel-item video {
+  width: 80%;
+  height: 95%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
 
 /* Navigation Buttons */
 .prev-btn, .next-btn {
@@ -100,4 +117,25 @@
   background: rgba(255, 255, 255, 0.5);
   border-color: #fff;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .lany-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .lany-info {
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .gallery-description {
+    max-width: 100%;
+  }
+
+  .carousel {
+    width: 100%;
+  }
 }
